@@ -1,0 +1,17 @@
+#GUI和CLI分别是图形界面和命令行界面
+
+1.开机显示设置
+GUI setup:
+echo “/usr/sbin/gdm” | sudo tee /etc/X11/default-display-manager
+
+CLI setup:
+echo “false” | sudo tee /etc/X11/default-display-manager
+
+2.切换
+按 Ctrl + Alt + (F1~F6中的任意一个)即可进入纯命令行模式。进入后，需要输入用户名，密码（此处包括root用户与非root用户）。
+注意：输入密码是要使用位于键盘上面的数字，不要使用小键盘数字（这种情况是对键盘上有两处可以输数字的情况而言），另外，输入的密码是不显示的。否则有可能出现 login incorrect。
+
+按 Ctrl + Alt + F7即进入图形界面模式。
+
+3.进入GUI
+使用命令行模式启动，startx可以直接进入GUI，但是和直接使用GUI启动显示会有一点差异（使用虚拟机时），例如桌面显示内容，右键快捷键等
